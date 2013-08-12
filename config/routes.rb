@@ -1,4 +1,6 @@
 Epsite::Application.routes.draw do
+  resources :collages
+
   resources :welcomes
 
   # The priority is based upon order of creation: first created -> highest priority.

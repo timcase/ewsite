@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130812185329) do
+ActiveRecord::Schema.define(version: 20130812233304) do
+
+  create_table "collages", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "welcomes", force: true do |t|
     t.datetime "created_at"
