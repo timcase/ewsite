@@ -7,4 +7,12 @@ class CollagesController < ApplicationController
   def show
     @url = request.url
   end
+
+  def new
+    @url = request.url
+  end
+
+  def edit
+    @url = request.url
+  end
 end
