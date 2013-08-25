@@ -1,3 +1,4 @@
+$('table#find_similar').show();
 $("table#find_similar > tbody").html("");
 <% @artists.each do |artist| %>
   $('table#find_similar tbody:last').append('<tr><td><%= artist.name %></td><td><%= artist.location.location %></td><td><%= number_with_precision(artist.hotttnesss, :precision => 2)%></tr>');

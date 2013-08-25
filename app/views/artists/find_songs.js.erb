@@ -1,3 +1,4 @@
+$('table#find_songs').show();
 $("table#find_songs > tbody").html("");
 <% @songs.each do |song| %>
   $('table#find_songs tbody:last').append('<tr><td><%= song.title %></td></tr>')

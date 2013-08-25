@@ -21,4 +21,8 @@ $(function() {
         */
         event.preventDefault();
     });
+    $('#find_songs').hide();
+    $('#find_similar').hide();
+    $('#find_images').hide();
+
 });

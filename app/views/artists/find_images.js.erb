@@ -1,3 +1,4 @@
+$('table#find_images').show();
 $("table#find_images > tbody").html("");
 <% @images.each do |image| %>
   $('table#find_images tbody:last').append('<tr><td><img src="<%= image.url %>"/></td></tr>')
