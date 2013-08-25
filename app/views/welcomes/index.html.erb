@@ -101,6 +101,14 @@ end
               <tbody>
               </tbody>
             </table>
+            <pre>
+              <code>
+  def find_similar
+    @artists = Echowrap.artist_similar(:name => params[:artist_name], :bucket => ['artist_location', 'hotttnesss'])
+    @artists = @artists.sort{|a, b| a.hotttnesss <=> b.hotttnesss}.reverse
+  end
+              </code>
+            </pre>
         </div>
         <div class="span11">
           <%= form_tag('/artists/find_songs', method: 'get', remote: true) do %>
@@ -117,6 +125,13 @@ end
               <tbody>
               </tbody>
             </table>
+            <pre>
+              <code>
+  def find_songs
+    @songs = Echowrap.artist_songs(:name => params[:artist_name])
+  end
+              </code>
+            </pre>
         </div>
         <div class="span11">
           <%= form_tag('/artists/find_images', method: 'get', remote: true) do %>
@@ -133,6 +148,13 @@ end
               <tbody>
               </tbody>
             </table>
+            <pre>
+                <code>
+  def find_images
+    @images = Echowrap.artist_images(:name => params[:artist_name])
+  end
+                </code>
+            </pre>
         </div>
         <div class="row">
           <div id="about" class="big-height span12">
