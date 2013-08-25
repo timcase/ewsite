@@ -1,5 +1,11 @@
 Epsite::Application.routes.draw do
-  resources :collages
+  resources :artists do
+    collection do
+      get 'find_similar'
+      get 'find_songs'
+      get 'find_images'
+    end
+  end
 
   resources :welcomes
 

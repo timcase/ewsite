@@ -1,0 +1,49 @@
+// Place all the styles related to the Welcomes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+h1{
+  font-family: 'Roboto Slab', serif;
+}
+
+.hero-unit{
+  margin-top: 40px;
+  background-color: #99251c;
+  color: #ffffff;
+  font-size: 2em;
+  text-shadow: 1px 1px 3px #333333;
+}
+
+.hero-unit h1{
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 5px #333333;
+  font-size: 100px;
+}
+
+
+.hero-unit .icon-headphones{
+  font-size: 200px;
+}
+#tagline{
+  margin-bottom: 50px;
+}
+
+#actions{
+  margin-bottom: 0px;
+  margin-top: 65px;
+}
+.hero-unit .btn{
+  color: #333333;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f5f5f5;
+  font-family: 'Roboto Slab', serif;
+}
+
+.hero-unit .btn-primary{
+  background-color: #e7d785;
+}
+
+.btn-custom { background-color: hsl(42, 100%, 51%) !important; background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffd575", endColorstr="#ffb405"); background-image: -khtml-gradient(linear, left top, left bottom, from(#ffd575), to(#ffb405)); background-image: -moz-linear-gradient(top, #ffd575, #ffb405); background-image: -ms-linear-gradient(top, #ffd575, #ffb405); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffd575), color-stop(100%, #ffb405)); background-image: -webkit-linear-gradient(top, #ffd575, #ffb405); background-image: -o-linear-gradient(top, #ffd575, #ffb405); background-image: linear-gradient(#ffd575, #ffb405); border-color: #ffb405 #ffb405 hsl(42, 100%, 45.5%); color: #333 !important; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.36); -webkit-font-smoothing: antialiased; }
+
+.big-height{
+  height: 4000 px;
+}

@@ -1,1 +1,124 @@
-Woot!
+	<div class="hero-unit">
+    <h1>Echowrap
+      <div style="float:right;">
+      <i class="icon-headphones"></i>
+      </div>
+    </h1>
+      <p id="tagline">
+        A Ruby interface to the Echonest API
+			</p>
+			<p id="actions">
+				<a href="#quickstart" class="btn btn-large btn-custom"><i class="icon-magic icon-large"></i>&nbsp;&nbsp;
+Quick Start</a>
+				<a href="#demos" class="btn btn-large btn-custom"><i class="icon-play icon-large"></i>&nbsp;&nbsp;
+              Demos</a> 
+				<a href="#about" class="btn btn-large btn-custom"><i class="icon-male icon-large"></i>&nbsp;&nbsp;About</a>
+				<a href="https://github.com/timcase/echowrap" class="btn btn-large btn-custom"><i class="icon-github icon-large"></i>&nbsp;&nbsp;Github Source</a>
+				<a href="https://github.com/timcase/echowrap/wiki" class="btn btn-large btn-custom"><i class="icon-book icon-large"></i>&nbsp;&nbsp;Docs</a>
+			</p>
+		</div>
+	
+		<div class="row">
+			<div id="quickstart" class="big-height span12">
+				<h2>Quickstart</h2>
+        <ol>
+          <li>Create an account at Echonest <a href="https://developer.echonest.com/account/register" target="_blank" >click here to go the Echonest API Signup page</a>.</li>
+          <li>Activate your Echonest account by clicking the link in the Activation email you should receive.</li>
+          <li>You will see your account is activated, and you should see your API Key, Consumer Key, and Shared Secret.  Initial API request limit is 10 API calls per hour.</li>
+          <li><pre><code>$ gem install echowrap</code></pre></li>
+          <li><pre><code>$ irb</code></pre></li>
+          <li><pre><code>> require 'echowrap'
+         => true</code></pre></li>
+          <li><pre><code>> Echowrap.configure do |config|
+    config.api_key = 'YOUR API KEY'
+    config.consumer_key = 'YOUR CONSUMER KEY'
+    config.shared_secret = 'YOUR SHARED SECRET'
+end
+=> Echowrap</code>
+              </pre>
+         </li>
+         <li><pre><code>Echowrap.artist_search(:name => 'daft', :results => 3)
+           => [#<Echowrap::Artist:0x007ff13b0b8748 @attrs={:name=>"Daft Punk", :id=>"ARF8HTQ1187B9AE693"}>, 
+               #<Echowrap::Artist:0x007ff13b0b86f8 @attrs={:name=>"Daft Punk+Fool", :id=>"ARPNDFM13E43CE6D63"}>, 
+               #<Echowrap::Artist:0x007ff13b0b86d0 @attrs={:name=>"Daft Punk/Avicii", :id=>"ARPKVEU136F6F0CD19"}>]</code></pre></li>
+        </ol>
+			</div>
+    </div>
+    <div class="row">
+      <div id="demos" class="big-height span12">
+        <h2>Demos</h2>
+        <div class="span11">
+          <%= form_tag('/artists/find_similar', method: 'get', remote: true) do %>
+            <fieldset>
+              <legend>Find Similar Artists</legend>
+              <label>Artist Name</label>
+              <input name="artist_name" type="text" placeholder="Find similar artists to...">
+              <span class="help-block">ex. AC/DC, Macklemore, Vampire Weekend<span>
+              <button type="submit" class="btn">Submit</button>
+            </fieldset>
+          <% end %>
+            <table class="table" id="find_similar">
+              <thead><tr><th>Name</th><th>Location</th><th>Hotttnesss</th></tr></thead>
+              <tbody>
+              </tbody>
+            </table>
+        </div>
+        <div class="span11">
+          <%= form_tag('/artists/find_songs', method: 'get', remote: true) do %>
+            <fieldset>
+              <legend>Find Artist's Songs</legend>
+              <label>Artist Name</label>
+              <input name="artist_name" type="text" placeholder="Find songs for artist...">
+              <span class="help-block">ex. Daft Punk, Radiohead, Kendrick Lamar<span>
+              <button type="submit" class="btn">Submit</button>
+            </fieldset>
+          <% end %>
+            <table class="table" id="find_songs">
+              <thead><tr><th>Title</th></tr></thead>
+              <tbody>
+              </tbody>
+            </table>
+        </div>
+        <div class="span11">
+          <%= form_tag('/artists/find_images', method: 'get', remote: true) do %>
+            <fieldset>
+              <legend>Find Artist's images</legend>
+              <label>Artist Name</label>
+              <input name="artist_name" type="text" placeholder="Find images for artist...">
+              <span class="help-block">ex. LCD Soundsystem, Empire of the Sun, Eminem<span>
+              <button type="submit" class="btn">Submit</button>
+            </fieldset>
+          <% end %>
+            <table class="table" id="find_images">
+              <thead><tr><th>Image</th></tr></thead>
+              <tbody>
+              </tbody>
+            </table>
+        </div>
+        <div class="row">
+          <div id="about" class="big-height span12">
+            <h2>About</h2>
+            <p>Echowrap was built by <a href="http://www.timcase.info/">Tim Case, who likes building audio projects both software and hardware.</a> He plays music under the moniker <a href="http://blastinmartin.com">Blastin Martin.</a>.</p>
+<img src="http://user.photos.s3.amazonaws.com/user_195240.jpg"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+$(function() {
+    $('#actions a').bind('click',function(event){
+        var $anchor = $(this);
+ 
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500,'easeInOutExpo');
+        /*
+        if you don't want to use the easing effects:
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1000);
+        */
+        event.preventDefault();
+    });
+});
+</script>

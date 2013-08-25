@@ -43,12 +43,14 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'quiet_assets'
 gem "analytics-ruby"
 gem "bcrypt-ruby"
 gem "bourbon"
 gem "simple_form"
 gem "uuidtools"
+gem 'echowrap'
+
 group :development do
   gem "rspec-rails"
   gem "guard-rspec"
