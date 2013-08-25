@@ -5,7 +5,7 @@
       </div>
     </h1>
       <p id="tagline">
-        A Ruby interface to the Echonest API
+        A Ruby interface to The Echo Nest API
 			</p>
 			<p id="actions">
 				<a href="#quickstart" class="btn btn-large btn-custom"><i class="icon-magic icon-large"></i>&nbsp;&nbsp;
@@ -13,10 +13,49 @@ Quick Start</a>
 				<a href="#demos" class="btn btn-large btn-custom"><i class="icon-play icon-large"></i>&nbsp;&nbsp;
               Demos</a> 
 				<a href="#about" class="btn btn-large btn-custom"><i class="icon-male icon-large"></i>&nbsp;&nbsp;About</a>
-				<a href="https://github.com/timcase/echowrap" class="btn btn-large btn-custom"><i class="icon-github icon-large"></i>&nbsp;&nbsp;Github Source</a>
-				<a href="https://github.com/timcase/echowrap/wiki" class="btn btn-large btn-custom"><i class="icon-book icon-large"></i>&nbsp;&nbsp;Docs</a>
+				<a href="https://github.com/timcase/echowrap" target="_blank" class="btn btn-large btn-custom"><i class="icon-github icon-large"></i>&nbsp;&nbsp;Github Source</a>
+				<a href="https://github.com/timcase/echowrap/wiki" target="_blank" class="btn btn-large btn-custom"><i class="icon-book icon-large"></i>&nbsp;&nbsp;Docs</a>
 			</p>
 		</div>
+    <div class="row">
+      <div id="explanation" class="span12">
+        <p class="lead"><a href="http://echonest.com/" target="_blank">The Echo Nest</a> is the world’s leading music intelligence company. 
+        They provide the largest repository of dynamic music data in the world – over a trillion data points on over 30 million songs -- 
+        to help application developers build smarter music apps.</p>
+        <p class="lead">Echowrap provides a Ruby interface to The Echo Nest API:</p>
+        <ul> 
+          <li>Echowrap supports 100% of the Echonest API Version 4</li>
+          <li>Data returned from API calls are mapped into Ruby objects</li>
+          <li>Various http clients are supported via Faraday</li>
+          <li>Uses Unix philosophy of "do one thing and do it well"</li>
+        </ul>
+        <h2>Some things you can do via the API</h2>
+        <ul>
+          <li>Analyze a track to find it's key, energy level, danceability, acousticness, and whether it's live or studio</li>
+          <li>Break down a track by it's sections, beats, and fractions of a beat</li>
+          <li>Identify an unknown piece of music</li>
+          <li>Search for artists using a wide variety of criteria and get in-depth info about an artist:
+            <ul>
+              <li>The artist's location</li>
+              <li>Blogs associated witht the artist</li>
+              <li>The artist Bio</li>
+              <li>Numerical rating of how familiar the artist is</li>
+              <li>Numerical rating of how "hot" the artist is</li>
+              <li>News associated with the artist</li>
+              <li>Reviews of work by the artist</li>
+              <li>List songs by the artist</li>
+              <li>Find other similar artists to a particular artist</li>
+              <li>The artist's twitter feed</li>
+              <li>Videos of the artist</li>
+              <li>Notable url related to artist</li>
+            </ul>
+          </li>
+          <li>Create taste profiles to track what you like
+          <li>Find more music that you may like based on your taste profile</li>
+          <li>Create playlists based on your tastes</li>
+      </ul>
+      </div>
+    </div>
 	
 		<div class="row">
 			<div id="quickstart" class="big-height span12">
