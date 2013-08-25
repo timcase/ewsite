@@ -44,11 +44,11 @@ after "deploy:cp_secre_token", "deploy:cp_echowrap"
 
 
    task :cp_secret_token do
-     run "cd #{release_path}/config/initializers; cp /var/www/ewsite/shared/secret_token.rb secret_token.rb;"
+     run "cd #{release_path}/config/initializers; cp /var/www/ewsite/shared/initializers/secret_token.rb secret_token.rb;"
    end
 
    task :cp_echowrap do
-     run "cd #{release_path}/config/initializers; cp /var/www/ewsite/shared/echowrap.rb echowrap.rb;"
+     run "cd #{release_path}/config/initializers; cp /var/www/ewsite/shared/initializers/echowrap.rb echowrap.rb;"
    end
 
  end
