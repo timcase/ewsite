@@ -7,8 +7,9 @@ $(function() {
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
-    $('#actions a').bind('click',function(event){
+    $('#actions a.glidedown').bind('click',function(event){
         var $anchor = $(this);
+        _gaq.push(['_trackEvent', 'action', 'click', $anchor.attr('href')]);
 
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
