@@ -27,7 +27,6 @@ ssh_options[:port] = port
 
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
-after "deploy:update_code", "deploy:migrate"
 after "deploy:migrate", "deploy:cp_secret_token"
 after "deploy:cp_secre_token", "deploy:cp_echowrap"
 
