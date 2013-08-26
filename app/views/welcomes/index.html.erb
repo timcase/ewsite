@@ -87,13 +87,37 @@ end
       <div id="demos" class="big-height span12">
         <h2>Demos</h2>
         <div class="span11">
+          <%= form_tag('/artists/find_artist', method: 'get', remote: true) do %>
+            <fieldset>
+              <legend>Find Artist</legend>
+              <label>Artist Name</label>
+              <input name="artist_name" type="text" placeholder="Find artist...">
+              <div class="help-block"><small>ex. Lana Del Rey, Phoenix, R. Kelly</small></div>
+              <%= button_tag "Submit", :class => 'btn btn-primary', :data => { :disable_with => "Please wait..." }%> 
+            </fieldset>
+          <% end %>
+            <table class="table" id="find_artist">
+              <thead><tr><th>Name</th><th>Hotttnesss</th><th>Familiarity</th></tr></thead>
+              <tbody>
+              </tbody>
+            </table>
+            <pre>
+              <code>
+
+  def find_artist
+    @artist = Echowrap.artist_search(:name => params[:artist_name], :results => 1, :bucket => ['hotttnesss', 'familiarity'])
+  end
+              </code>
+            </pre>
+        </div>
+        <div class="span11">
           <%= form_tag('/artists/find_similar', method: 'get', remote: true) do %>
             <fieldset>
               <legend>Find Similar Artists</legend>
               <label>Artist Name</label>
               <input name="artist_name" type="text" placeholder="Find similar artists to...">
-              <span class="help-block">ex. AC/DC, Macklemore, Vampire Weekend<span>
-              <button type="submit" class="btn">Submit</button>
+              <div class="help-block"><small>ex. AC/DC, Macklemore, Vampire Weekend</small></div>
+              <%= button_tag "Submit", :class => 'btn btn-primary', :data => { :disable_with => "Please wait..." }%> 
             </fieldset>
           <% end %>
             <table class="table" id="find_similar">
@@ -116,8 +140,9 @@ end
               <legend>Find Artist's Songs</legend>
               <label>Artist Name</label>
               <input name="artist_name" type="text" placeholder="Find songs for artist...">
-              <span class="help-block">ex. Daft Punk, Radiohead, Kendrick Lamar<span>
-              <button type="submit" class="btn">Submit</button>
+              <div class="help-block"><small>ex. Daft Punk, Radiohead, Kendrick Lamar</small></div>
+              <%= button_tag "Submit", :class => 'btn btn-primary', :data => { :disable_with => "Please wait..." }%> 
+            </fieldset>
             </fieldset>
           <% end %>
             <table class="table" id="find_songs">
@@ -139,8 +164,8 @@ end
               <legend>Find Artist's images</legend>
               <label>Artist Name</label>
               <input name="artist_name" type="text" placeholder="Find images for artist...">
-              <span class="help-block">ex. LCD Soundsystem, Empire of the Sun, Eminem<span>
-              <button type="submit" class="btn">Submit</button>
+              <div class="help-block"><small>ex. LCD Soundsystem, Empire of the Sun, Eminem</small></div>
+              <%= button_tag "Submit", :class => 'btn btn-primary', :data => { :disable_with => "Please wait..." }%> 
             </fieldset>
           <% end %>
             <table class="table" id="find_images">

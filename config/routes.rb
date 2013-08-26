@@ -4,6 +4,7 @@ Epsite::Application.routes.draw do
       get 'find_similar'
       get 'find_songs'
       get 'find_images'
+      get 'find_artist'
     end
   end
 
