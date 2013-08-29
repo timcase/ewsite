@@ -1,6 +1,9 @@
 $('table#find_artist').show();
 $("table#find_artist > tbody").html("");
-<% @artist.each do |artist| %>
+<% @artists.each do |artist| %>
   $('table#find_artist tbody:last').append('<tr><td><%= artist.name %></td><td><%= number_with_precision(artist.hotttnesss, :precision => 2) %></td><td><%= number_with_precision(artist.familiarity, :precision => 2) %></td></tr>')
+<% end %>
+<% if @artists.none? %>
+    $('table#find_artist tbody:last').append('<tr><td>Nothing found for "<%= params[:artist_name] %>"</td></tr>');
 <% end %>
 $('table#find_artist').focus();

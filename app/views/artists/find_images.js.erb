@@ -3,4 +3,7 @@ $("table#find_images > tbody").html("");
 <% @images.each do |image| %>
   $('table#find_images tbody:last').append('<tr><td><img src="<%= image.url %>"/></td></tr>')
 <% end %>
+<% if @images.none? %>
+    $('table#find_images tbody:last').append('<tr><td>Nothing found for "<%= params[:artist_name] %>"</td></tr>');
+<% end %>
 $('table#find_images').focus();
