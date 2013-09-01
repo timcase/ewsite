@@ -22,6 +22,7 @@ $(function() {
         */
         event.preventDefault();
     });
+    $('#find_artist').hide();
     $('#find_songs').hide();
     $('#find_similar').hide();
     $('#find_images').hide();
