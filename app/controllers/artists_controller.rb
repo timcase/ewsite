@@ -14,6 +14,8 @@ class ArtistsController < ApplicationController
   end
 
   def find_artist
-    @artists = Echowrap.artist_search(:name => params[:artist_name], :results => 1, :bucket => ['hotttnesss', 'familiarity'])
+    @artists = Echowrap.artist_search(:name => params[:artist_name],
+                                      :results => 1,
+                                      :bucket => ['hotttnesss', 'familiarity', 'artist_location'])
   end
 end
