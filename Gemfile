@@ -49,6 +49,7 @@ gem "bcrypt-ruby"
 gem "bourbon"
 gem "simple_form"
 gem "uuidtools"
+gem "faraday", "0.9.0"
 gem 'echowrap'
 
 group :development do
